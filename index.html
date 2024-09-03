@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leah_Workshop_2_WORKING</title>
+	<meta charset="utf-8">
+	<!-- Compiled w/ P5LIVE, http://github.com/ffd8/p5live -->
+	<style type="text/css">
+		body{
+			margin:0;
+			overflow:hidden;
+		}
+		canvas{
+			position:fixed;
+			top:0;
+			left:0;
+			z-index:-1;
+			width:100vw;
+			height:100vh;
+			margin:0;
+		}
+	</style>
+	<script type="text/javascript">
+		// eco-mode = only render if window focused
+		window.onblur = function () {
+			noLoop();
+		};
+		window.onfocus = function () {
+			loop();
+		};
+	</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/processing/p5.js-sound/lib/p5.sound.min.js"></script>
+</head>
+<body style="background: rgb(0, 0, 0);">
+
+<script type="text/javascript">
+//Leah_Workshop_2_WORKING
+
+/* CUSTOM FUNCTIONS FOR P5LIVE */
+// keep fullscreen if window resized
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+
+// custom ease function
+function ease(iVal, oVal, eVal){
+	return oVal += (iVal - oVal) * eVal;
+}
+
+// processing compatibility
+function println(msg){
+	print(msg);
+}
+
+
+// Bouncing img[index] Logo
+// Daniel Shiffman
+// https://thecodingtrain.com/challenges/131-bouncing-img[index]-logo.html
+// https://youtu.be/0j86zuqqTlQ
+// https://editor.p5js.org/codingtrain/sketches/S-es-dYVn
+
+let x;
+let y;
+
+let xspeed;
+let yspeed;
+
+
+let img = [];
+let index = 0;
+
+ 
+
+function preload() {
+	img[0] = loadImage('https://i.imgur.com/nHVVLLe.png');
+	img[1] = loadImage('https://i.imgur.com/IvB1sfF.png');
+	img[2] = loadImage('https://i.imgur.com/kKPSkrZ.png');
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  x = random(width);
+  y = random(height);
+  xspeed = 3;
+  yspeed = 3;
+ 
+  textAlign(CENTER,CENTER)
+  fill(30,45,249)
+  
+  
+  
+}
+
+function draw() {
+  background(0);
+  // rect(x, y, 80, 60); 
+  // Draw the img[index] logo
+  image(img[index], x, y);
+  
+
+  x = x + xspeed;
+  y = y + yspeed;
+
+  if (x + img[index].width >= width) {
+    xspeed = -xspeed;
+    x = width - img[index].width;
+    index = index + 1;
+  } else if (x <= 0) {
+    xspeed = -xspeed;
+    x = 0;
+    index = index + 1;
+  }
+
+  if (y + img[index].height >= height) {
+    yspeed = -yspeed;
+    y = height - img[index].height;
+    index = index +1;
+  } else if (y <= 2) {
+    yspeed = -yspeed;
+    y = 0;
+    index = index + 1;
+    } else if (index >= 2){
+    index = 0;
+  }}
+</script>
+
+</body>
+</html>
