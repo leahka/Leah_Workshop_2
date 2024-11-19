@@ -1,4 +1,4 @@
-Track Name,Genre,Duration (seconds),BPM,Key,Energy Level,Danceability,Popularity
+Track Name,Genre,Duration ,BPM,Key,Energy Level,Danceability,Popularity
 Jack Johnson - Upside Down,Acoustic Rock,211,100,C Major,0.7,0.8,75
 Frances Ruffelle - On My Own,Musical Theatre,210,80,E Major,0.5,0.4,60
 Judy Kuhn - Just Around the Riverbend,Disney,150,120,G Major,0.6,0.7,65
