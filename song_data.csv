@@ -1,4 +1,4 @@
-Track Name,Genre,Duration (seconds),BPM,Key,Energy Level,Danceability,Popularity
+TrackName,Genre,Duration,BPM,Key,Energy Level,Danceability,Popularity
 Fast Car,Folk Rock,297,104,E Minor,Low,High,80
 Have a Good Time,Soft Rock,206,103,B# Major,Medium,Medium,65
 Never Going Back Again - 2004 Remaster,Folk Rock,122,82,F Major,Medium,Medium,70
